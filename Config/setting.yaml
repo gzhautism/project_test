@@ -1,0 +1,69 @@
+Test:
+  # 测试用例的类别,即为当前需要测试用例的方式
+  type: xlsx
+  # path 为TestCase目录下的项目名
+  path: AIDL
+  # case为需要测试的用例表格
+  case: AIDL_v1.0.2测试用例 _20220117.xlsx
+  # sheet 执行的sheet页码
+  sheet_name: AIDL接口
+  #测试用例起始行数
+  start_row: 2
+  #测试app 名称
+  app: "com.aiways.autonavi"
+  #测试执行人
+  Author: chenghchengy
+
+  # 如果需要指定部分协议id测试,例如 [30000,30001,30002] 默认为[] 执行所有用例
+  protocolid: []
+  # 禁止执行的用例excel 行数 例如 [2,3,4] 默认为[] 执行所有用例
+  exclude: []
+  #前置动作excel列数
+  setupIndex: 10
+  teardownIndex: 11
+  #输入json格式
+  json: {"messageType": "request", "versionName": "v_20200320", "statusCode": 0,
+        "needResponse": True, "message": "", "responseCode": "", "requestCode": "", "requestAuthor": "xunfei"}
+
+Server:
+  url: http://10.130.160.110:5000
+
+Parameter:
+  # 平台 默认为 Android
+  platform: Android
+  #log开关
+  log: True
+  # DEBUG INFO WARNING ERROR
+  # 框架log的等级
+  log_level: DEBUG
+  # log最大的保存文件大小, 10 * 1024 * 1024
+  max_log_length: 52428800
+  # log达到最大保存大小 自动备份的数量
+  backup_count: 10
+  # 是否生成 html格式的报告
+  html: True
+
+
+#图像识别参数，非开发人员严禁更改，可能导致识别错误
+poco:
+
+  #全局图像识别阈值 >0.7 就认为图片查找到 取值范围（0-1）
+  THRESHOLD: 0.7
+  # 也是图像识别阈值 ，已废弃
+  THRESHOLD_STRICT: None
+  #每个操作后的等待时间
+  OPDELAY: 0.1
+  #查询超时时长   包含  assert_exists()、touch()、wait()、swipe()等方法
+  FIND_TIMEOUT: 20
+  #查询超时时长，assert_not_exists()、exists()
+  FIND_TIMEOUT_TMP: 3
+  #截图的 精度，默认为 10，取值范围为 0-100 取值越大图像越清晰，但占用空间越大
+  SNAPSHOT_QUALITY: 10
+  # 全局保存图片 配置项  默认为开启截图
+  SAVE_IMAGE: False
+
+
+
+
+
+
